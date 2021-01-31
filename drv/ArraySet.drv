@@ -41,15 +41,17 @@ public class ARRAY_SET KEY_GENERIC extends ABSTRACT_SET KEY_GENERIC implements j
 	/** The number of valid entries in {@link #a}. */
 	private int size;
 
-	/** Creates a new array set using the given backing array. The resulting set will have as many elements as the array.
+	/** Creates a new array set using the given elements.
 	 *
-	 * <p>It is the responsibility of the caller to ensure that the elements of {@code a} are distinct.
+	 * <p>It is the responsibility of the caller to ensure that the elements are distinct.
 	 *
-	 * @param a the backing array.
+	 * @apiNote {@code e} is a vararg argument whose associated array will be used as backing array.
+	 *
+	 * @param e the elements.
 	 */
-	public ARRAY_SET(final KEY_TYPE[] a) {
-		this.a = a;
-		size = a.length;
+	public ARRAY_SET(final KEY_TYPE... e) {
+		this.a = e;
+		size = e.length;
 	}
 
 	/** Creates a new empty array set.

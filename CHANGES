@@ -3,6 +3,9 @@
 - Fixed wrong implementation of forEachRemaining() in hash-based
   containers.
 
+- Array-based constructors for sets are now varargs whenever
+  possible.
+
 8.5.1
 
 - Fixed bug in AbstractIndexBasedBigIterator that was affecting

@@ -26,7 +26,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import it.unimi.dsi.fastutil.Hash;
-
 import it.unimi.dsi.fastutil.MainRunner;
 import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 
@@ -117,7 +116,7 @@ public class ObjectOpenHashSetTest {
 	@Test
 	public void testToSet() {
 		final ObjectOpenHashSet<String> baseSet = ObjectOpenHashSet.of("wood", "board", "glass", "metal");
-		ObjectOpenHashSet<String> transformed = baseSet.stream().map(s -> "ply" + s).collect(ObjectOpenHashSet.toSet());
+		final ObjectOpenHashSet<String> transformed = baseSet.stream().map(s -> "ply" + s).collect(ObjectOpenHashSet.toSet());
 		assertEquals(ObjectOpenHashSet.of("plywood", "plyboard", "plyglass", "plymetal"), transformed);
 	}
 
@@ -125,13 +124,13 @@ public class ObjectOpenHashSetTest {
 	public void testSpliteratorTrySplit() {
 		final ObjectOpenHashSet<String> baseSet = ObjectOpenHashSet
 				.of("0", "1", "2", "3", "4", "5", "bird");
-		ObjectSpliterator<String> spliterator1 = baseSet.spliterator();
+		final ObjectSpliterator<String> spliterator1 = baseSet.spliterator();
 		assertEquals(baseSet.size(), spliterator1.getExactSizeIfKnown());
-		ObjectSpliterator<String> spliterator2 = spliterator1.trySplit();
+		final ObjectSpliterator<String> spliterator2 = spliterator1.trySplit();
 		// No assurance of where we split, but where ever it is it should be a perfect split.
-		java.util.stream.Stream<String> stream1 = java.util.stream.StreamSupport
+		final java.util.stream.Stream<String> stream1 = java.util.stream.StreamSupport
 				.stream(spliterator1, false);
-		java.util.stream.Stream<String> stream2 = java.util.stream.StreamSupport
+		final java.util.stream.Stream<String> stream2 = java.util.stream.StreamSupport
 				.stream(spliterator2, false);
 
 		final ObjectOpenHashSet<String> subSet1 = stream1.collect(ObjectOpenHashSet.toSet());

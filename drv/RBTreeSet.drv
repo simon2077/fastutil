@@ -186,15 +186,15 @@ public class RB_TREE_SET KEY_GENERIC extends ABSTRACT_SORTED_SET KEY_GENERIC imp
 	}
 
 
-	/** Creates a new tree set copying the elements of an array.
+	/** Creates a new tree set using the given elements.
 	 *
-	 * @param a an array to be copied into the new tree set.
+	 * @param e elements that will be stored into the new tree set.
 	 */
 
-	public RB_TREE_SET(final KEY_GENERIC_TYPE[] a) {
+	public RB_TREE_SET(final KEY_GENERIC_TYPE... e) {
 		this();
-		int i = a.length;
-		while(i-- != 0) add(a[i]);
+		int i = e.length;
+		while(i-- != 0) add(e[i]);
 	}
 
 

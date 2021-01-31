@@ -268,13 +268,13 @@ public class OPEN_HASH_BIG_SET KEY_GENERIC extends ABSTRACT_SET KEY_GENERIC impl
 	}
 
 	/** Creates a new hash big set with {@link Hash#DEFAULT_LOAD_FACTOR} as load factor
-	 * copying the elements of an array.
+	 * using the given elements.
 	 *
-	 * @param a an array to be copied into the new hash big set.
+	 * @param e elements to stored into the new hash big set.
 	 */
 
-	public OPEN_HASH_BIG_SET(final KEY_GENERIC_TYPE[] a) {
-		this(a, DEFAULT_LOAD_FACTOR);
+	public OPEN_HASH_BIG_SET(final KEY_GENERIC_TYPE... e) {
+		this(e, DEFAULT_LOAD_FACTOR);
 	}
 
 #ifndef Custom
